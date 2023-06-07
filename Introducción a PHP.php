@@ -205,6 +205,18 @@ $miArrayAsociativo = array(
     "2022" => "Mendez",
 );
 
+/* Para acceder a un valor de un array asociativo, se utiliza su clave correspondiente. */
+
+echo $miArrayAsociativo["2017"];
+echo $miArrayAsociativo["2020"];
+echo $miArrayAsociativo["2022"];
+
+/* O se usa un bucle foreach */
+
+foreach ($miArrayAsociativo as $key => $value) {
+  echo "Key: " . $key . "Value: " . $value;
+}
+
 /* Metodos de arrays  */
 
 /* Acceder a un elemento del array  */
@@ -221,6 +233,67 @@ array_push($miArreglo2, 'Arrieta');
 
 /* Añadir un elemento al inicio  */
 
-array_unshift($miArreglo2, 'Guzmán')
+array_unshift($miArreglo2, 'Guzmán');
+
+/* Buscar elemento a un arreglo */
+
+var_dump(in_array('Quezada, $miArreglo2'));
+
+/* Ordenar elementos de un arreglo */
+
+$edadCampers = [27,61,86,7,99,23,12,104];
+sort($edadCampers); // De menor a mayor
+rsort($edadCampers); // De mayor a menor
+
+/* Ordenar arreglo asociativo */
+
+$jugador = [
+  'username' => 'Katarina',
+  'rol' => 'Asesino',
+  'nivel' => 30,
+  'tipo' => 'Midlaner'
+];
+
+/* Ordena por valores (orden alfabetico) */
+asort($jugador);
+
+/* Ordena por valores (z primero) */
+arsort($jugador);
+
+/* Ordena por llaves (orden alfabetico) */
+ksort($jugador);
+
+/* Ordena por llaves (orden alfabetico, de la z a la a) */
+krsort($jugador);
+
+
+/* 6. ISSET Y EMPTY */
+
+/* En PHP, isset() y empty() son dos funciones utilizadas para verificar si una variable o un elemento de
+un array tiene un valor definido o no. */
+
+/* La función isset() comprueba si una variable o un elemento de un array está definido y no es null.
+Esta función devuelve true si la variable o el elemento de array existe y tiene un valor, y false en caso
+contrario. */
+
+/* Isset - Revisar si un arreglo esta creado o una propiedad esta definida */
+
+var_dump(isset($jugador));
+
+/* Isset - Permite revisar si una propiedad de un arreglo asociativo, existe */
+
+var_dump(isset($jugador['username']));
+
+
+/* Por otro lado, la función empty() comprueba si una variable o un elemento de un array está vacío.
+Esta función devuelve true si la variable o el elemento de array no tiene un valor definido, o si tiene
+un valor que se considera vacío (por ejemplo, una cadena vacía, 0, false, null, un array vacío, entre 
+otros), y false en caso contrario. */
+
+/* Empty - Revisa si un arreglo esta vacio  */
+
+var_dump(empty($jugador));
+
+
 
 ?>
